@@ -1,13 +1,16 @@
 from django.contrib import admin
+from .models import Categoria, Produto, Fabricante
 
-# Register your models here.
-from django.contrib import admin #isso já vai estar existindo no arquivo
-# Register your models here.
-from .models import * #imporata nossos models
-admin.site.register(Fabricante) #adiciona a interface do adm
+class FabricanteAdmin(admin.ModelAdmin):
+    date_hierarchy = 'criado_em'
 
-from django.contrib import admin
-# Register your models here.
-from .models import *
+class ProdutoAdmin(admin.ModelAdmin):
+    date_hierarchy = 'criado_em'
+    list_display = ('nome', 'preco', 'estoque', 'categoria', 'msgPromocao')  # Campos a serem exibidos na lista
+    empty_value_display = 'Vazio'  # Valor exibido quando o campo estiver vazio
+    fields = ('nome', 'destaque', 'promocao', 'msgPromocao', 'preco', 'categoria')  # Campos a serem exibidos no formulário
+    search_fields = ('nome', 'msgPromocao')  # Campos que podem ser usados para pesquisa
+
 admin.site.register(Categoria)
-admin.site.register(Produto)
+admin.site.register(Produto, ProdutoAdmin)
+admin.site.register(Fabricante, FabricanteAdmin)

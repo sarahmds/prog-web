@@ -1,3 +1,4 @@
+# loja/models/Categoria:
 from loja.models import *
 class Categoria(models.Model):
     Categoria = models.CharField(null=False, max_length=100)
