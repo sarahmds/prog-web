@@ -6,7 +6,7 @@ class FabricanteAdmin(admin.ModelAdmin):
 
 class ProdutoAdmin(admin.ModelAdmin):
     date_hierarchy = 'criado_em'
-    list_display = ('nome', 'preco', 'estoque', 'categoria')  # Campos a serem exibidos na lista
+    list_display = ('Produto', 'preco', 'categoria')  # Campos a serem exibidos na lista
     empty_value_display = 'Vazio'  # Valor exibido quando o campo estiver vazio
     fields = ('nome', 'destaque', 'promocao', 'preco', 'categoria')  # Campos a serem exibidos no formulário
     search_fields = ('nome', 'msgPromocao')  # Campos que podem ser usados para pesquisa
