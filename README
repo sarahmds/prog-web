@@ -1,0 +1,21 @@
+## Testes Unitários
+
+### O que é teste unitário
+Teste unitário é um tipo de teste automatizado que verifica a menor parte testável do sistema (funções, métodos ou classes) de forma isolada, garantindo que ela produza o resultado esperado.
+
+### Para que serve
+Os testes unitários servem para:
+- Garantir o funcionamento correto de cada parte do código;
+- Detectar erros logo no início do desenvolvimento;
+- Evitar regressões após alterações no sistema;
+- Aumentar a confiabilidade e a manutenibilidade do software.
+
+### Como o Django realiza testes
+O Django possui suporte nativo a testes unitários por meio da classe `TestCase`, localizada no módulo `django.test`.
+
+- `TestCase`: permite criar testes isolados, com criação e destruição automática de um banco de dados de teste.
+- `manage.py test`: comando responsável por localizar os testes, preparar o ambiente, executar os métodos de teste e exibir os resultados no terminal.
+
+Exemplo de execução:
+```bash
+python manage.py test
