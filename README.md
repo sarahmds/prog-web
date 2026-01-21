@@ -15,3 +15,6 @@ Teste unitário é um tipo de teste automatizado que valida a menor parte testá
 
 - `TestCase`: permite criar testes automatizados que rodam de forma isolada, utilizando um banco de dados de teste criado e destruído automaticamente a cada execução.
 - `manage.py test`: comando responsável por localizar os testes do projeto, preparar o ambiente de testes, executar os métodos definidos nas classes `TestCase` e exibir o resultado no terminal.
+
+### Fontes
+- [Cap14 TESTES UNITARIOS](Cap14-TESTES-UNITARIOS.pdf)
