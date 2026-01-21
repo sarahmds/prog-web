@@ -24,7 +24,11 @@ from django.conf.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('loja.urls.HomeUrls')),
+    path('', include('loja.urls.AuthUrls')),
     path('produto/', include('loja.urls.Produtourls')),
-    #path("", list_produto_view, name='produtos'),
-    #path("<int:id>", list_produto_view, name='produto'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('usuario/', include('loja.urls.UsuarioUrls')),
+    path('carrinho/', include('loja.urls.CarrinhoUrls')),
+    # path("", list_produto_view, name='produtos'),
+    # path("<int:id>", list_produto_view, name='produto'),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
+  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

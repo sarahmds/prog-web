@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Usuário{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="content">
+    <div class="container-fluid">
+        <div class="row">
+            <form class="col-md-6 col-lg-4 offset-md-3 offset-lg-4" method="POST" action="">
+                {% csrf_token %}
+
+                <!-- Mensagem de feedback -->
+                {% if message %}
+                <div class="alert alert-{{ message.type }}" role="alert">
+                    {{ message.text }}
+                </div>
+                {% endif %}
+
+                <div class="row">
+                    <!-- Campos do userForm -->
+                    {% for f in userForm %}
+                        {% if not f.is_hidden %}
+                            <div class="form-group col-md-6">
+                                {{ f.label }}
+                                {{ f }}
+                                {% for error in f.errors %}
+                                    <div class="invalid-feedback" style="display: block;">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ f }}
+                        {% endif %}
+                    {% endfor %}
+
+                    <!-- Campos do usuarioForm -->
+                    {% for f in usuarioForm %}
+                        {% if not f.is_hidden %}
+                            <div class="form-group col-md-6">
+                                {{ f.label }}
+                                {{ f }}
+                                {% for error in f.errors %}
+                                    <div class="invalid-feedback" style="display: block;">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ f }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3">Salvar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

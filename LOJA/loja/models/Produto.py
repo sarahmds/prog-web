@@ -1,5 +1,6 @@
-from re import search
-from loja.models import *
+from django.db import models
+from loja.models import Categoria, Fabricante
+
 class Produto(models.Model):
     Produto = models.CharField(null=False, max_length=100)
     destaque = models.BooleanField(default=True)
@@ -12,5 +13,6 @@ class Produto(models.Model):
     criado_em = models.DateTimeField(auto_now_add=True)
     alterado_em = models.DateTimeField(auto_now=True)
     image = models.ImageField(null=True, blank=True)
+
     def __str__(self):
         return '{}'.format(self.Produto)
