@@ -1,0 +1,6 @@
+Seminário – Testes Unitários
+Projeto: Loja
+Disciplina: Programação de Sistemas para Internet
+
+Objetivo:
+Aplicar testes unitários estudados no Capítulo 14 ao projeto de loja.
