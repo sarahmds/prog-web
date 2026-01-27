@@ -22,6 +22,7 @@ from django.conf.urls import include
 #from loja.views.ProfileView import list_produto_view
 
 urlpatterns = [
+    path("", include("loja.urls.urls")),
     path('admin/', admin.site.urls),
     path('', include('loja.urls.HomeUrls')),
     path('', include('loja.urls.AuthUrls')),
