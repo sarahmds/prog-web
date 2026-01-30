@@ -1,6 +1,32 @@
-Seminário – Testes Unitários
+Seminário – Testes Unitários (Capítulo 14)
 Projeto: Loja
 Disciplina: Programação de Sistemas para Internet
 
-Objetivo:
-Aplicar testes unitários estudados no Capítulo 14 ao projeto de loja.
+1. Introdução
+Testes unitários são utilizados para validar partes isoladas do sistema,
+garantindo que cada componente funcione corretamente.
+
+2. Projeto Utilizado
+Foi utilizado um projeto de loja desenvolvido em Django,
+organizado em um único app para facilitar a aplicação dos testes.
+
+3. Testes de Models
+Foram criados testes unitários para o model Produto,
+validando a criação de objetos e respeitando as regras do banco de dados.
+
+4. Testes de Views
+Foram realizados testes na view de listagem de produtos,
+verificando:
+- acesso à página
+- retorno HTTP 200
+- uso do template correto
+- funcionamento de filtros via parâmetros GET
+
+5. Execução dos Testes
+Os testes foram executados com o comando:
+python manage.py test
+Utilizando o banco de dados de teste do Django.
+
+6. Conclusão
+Os testes unitários aumentam a confiabilidade do sistema,
+facilitam a manutenção e ajudam a detectar erros precocemente.
