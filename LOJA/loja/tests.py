@@ -21,7 +21,7 @@ class ProdutoViewTest(TestCase):
     def setUp(self):
         Produto.objects.create(
             Produto="Produto Teste",
-            preco=10.00,        # campo obrigatório
+            preco=10.00,        
             promocao=False,
             destaque=False
         )
